@@ -1,0 +1,7 @@
+*.tar.gz
+src
+pkg
+*.zst
+local-data/Code/
+local-data/Wallpaper
+local-dwm

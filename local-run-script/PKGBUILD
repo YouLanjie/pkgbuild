@@ -1,0 +1,29 @@
+# Maintainer: Your Name <youremail@domain.com>
+pkgname=local-run-script
+pkgver=0.0.2
+pkgrel=2
+epoch=
+pkgdesc="方便安装后运行自定义脚本（现在内置nodejs-neovim）"
+arch=('any')
+url=""
+license=('GPL')
+groups=(local-built)
+depends=('nodejs' 'npm' 'neovim' 'local-http-server' 'vsftpd')
+makedepends=()
+checkdepends=()
+optdepends=()
+provides=()
+conflicts=()
+replaces=()
+backup=()
+options=()
+install="$pkgname.install"
+changelog=
+source=()
+noextract=()
+sha256sums=()
+validpgpkeys=()
+
+package() {
+	npm install -g neovim --prefix "${pkgdir}/usr/"
+}

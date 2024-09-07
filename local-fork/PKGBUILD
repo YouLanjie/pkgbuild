@@ -1,0 +1,33 @@
+# Maintainer: Your Name <youremail@domain.com>
+pkgname=local-fork
+pkgver=0.0.1
+pkgrel=1
+epoch=
+pkgdesc="fork to run shell command"
+arch=('any')
+url=""
+license=('GPL')
+groups=('local-built')
+depends=('glibc')
+makedepends=()
+checkdepends=()
+optdepends=()
+provides=()
+conflicts=()
+replaces=()
+backup=()
+options=()
+install=
+changelog=
+source=("fork.c")
+noextract=()
+sha256sums=(3ba1ba1c8b458142c668bbcced5e70046ae2c6952b8d9c2bca0f01a84696dce0)
+validpgpkeys=()
+
+build() {
+	gcc fork.c -o fork
+}
+
+package() {
+	install -D -m=0755 fork "$pkgdir/usr/bin/fork"
+}

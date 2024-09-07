@@ -1,0 +1,29 @@
+# Maintainer: Chglish <ylj18926385312@163.com>
+pkgname="local-http-server"
+pkgver=0.0.2
+pkgrel=2
+pkgdesc="本地https服务器（基于nodejs）"
+arch=('x86_64')
+url=""
+license=('GPL')
+groups=('local-built')
+depends=('nodejs' 'npm' 'local-fork')
+makedepends=('gcc')
+checkdepends=()
+optdepends=()
+provides=(http-server)
+conflicts=()
+replaces=()
+backup=()
+options=()
+install=
+changelog=
+source=("user-http-server.service")
+noextract=()
+sha256sums=('5ff87249e9d911b8ccd9f08a20ce01d1552bf04f794e24f14a1fceeb8b7f5c25')
+validpgpkeys=()
+
+package() {
+	npm install -g http-server --prefix "${pkgdir}/usr/"
+	install -D -m=0644 "user-http-server.service" "${pkgdir}/usr/lib/systemd/system/user-http-server.service"
+}
