@@ -1,6 +1,6 @@
 # Maintainer: LanjieYou <ylj18926385312@163.com>
 pkgname='local-theme'
-pkgver=0.0.1
+pkgver=0.0.2
 pkgrel=1
 pkgdesc="本地主题（图标、字体）"
 arch=('any')
@@ -20,7 +20,7 @@ install=
 changelog=
 source=("$pkgname.tar.gz")
 noextract=()
-sha256sums=("SKIP")
+sha256sums=("6a48ffddfe2b1ff69887a739397bc9a2274a5dbec1987a94878b9cd03cc43b8e")
 validpgpkeys=()
 
 package() {

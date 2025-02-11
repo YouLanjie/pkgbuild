@@ -1,6 +1,6 @@
 # Maintainer: Your Name <youremail@domain.com>
 pkgname=local-data
-pkgver=0.0.5
+pkgver=0.0.7
 pkgrel=1
 epoch=
 pkgdesc="File for archiso"
@@ -21,12 +21,13 @@ install=
 changelog=
 source=("$pkgname.tar.gz")
 noextract=()
-sha256sums=(211e97267fd47b4e0b523addd79ca13463c2a46ae50f5a809338f4fd78ad8689)
+sha256sums=('SKIP')
 validpgpkeys=()
 
 package() {
 	mkdir -p "$pkgdir/usr/share/local-data/"
 	mv Code "$pkgdir/usr/share/local-data/"
 	mv Wallpaper "$pkgdir/usr/share/local-data/"
+	mv doc "$pkgdir/usr/share/local-data/"
 	chmod g+rw -R "$pkgdir/usr/share/local-data/"
 }

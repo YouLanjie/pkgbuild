@@ -1,17 +1,17 @@
 # Maintainer: Chglish
 pkgname='arch-fast-install'
-pkgver=0.0.5
-pkgrel=3
+pkgver=0.0.9
+pkgrel=2
 epoch=
 pkgdesc="Arch快速安装脚本"
-arch=('any')
+arch=('x86_64')
 url=""
 license=('MIT')
 groups=(local-built)
-depends=('zsh' 'make')
+depends=('zsh' 'make' 'glibc')
 makedepends=('gcc' 'make')
 checkdepends=()
-optdepends=('my-config: 配置文件复制支持')
+optdepends=('local-data: 教程文件')
 provides=()
 conflicts=()
 replaces=()
@@ -30,9 +30,11 @@ build() {
 }
 
 package() {
+	install -D -m=0755 "arch-fast-install/script/help.sh" "${pkgdir}/usr/bin/arch-fast-install-help.sh"
 	install -D -m=0755 "arch-fast-install/script-helper" "${pkgdir}/usr/bin/script-helper"
 	mkdir -p "${pkgdir}/usr/share/arch-fast-install/"
 	mv "arch-fast-install/script" "${pkgdir}/usr/share/arch-fast-install/"
 	mv "arch-fast-install/tool" "${pkgdir}/usr/share/arch-fast-install/"
+	ln -s "/usr/share/local-data/doc" "${pkgdir}/usr/share/arch-fast-install/doc"
 }
 

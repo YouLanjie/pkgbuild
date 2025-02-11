@@ -4,4 +4,7 @@ pkg
 *.zst
 local-data/Code/
 local-data/Wallpaper
+local-data/doc
 local-dwm
+local-st
+local-config/.home

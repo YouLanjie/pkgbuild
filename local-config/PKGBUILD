@@ -1,0 +1,30 @@
+# Maintainer: Chglish
+pkgname=local-config
+pkgver=0.1
+pkgrel=2
+epoch=
+pkgdesc="自用配置"
+arch=('x86_64' 'i686')
+url=
+license=('MIT')
+groups=("local-built")
+depends=()
+makedepends=()
+checkdepends=()
+optdepends=()
+provides=()
+conflicts=()
+replaces=()
+backup=()
+options=()
+install=
+changelog=
+source=("config.tar.gz")
+noextract=()
+sha256sums=('SKIP')
+validpgpkeys=()
+
+package() {
+	mkdir -p "$pkgdir/usr/share/"
+	mv home "$pkgdir/usr/share/local-config"
+}
