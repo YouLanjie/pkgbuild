@@ -1,0 +1,41 @@
+# Maintainer: Your Name <youremail@domain.com>
+pkgname=gimp2
+pkgver=2.10.38
+pkgrel=5
+epoch=
+pkgdesc="Install gimp 2.10 (base on ALA)"
+arch=('x86_64')
+url="https://www.gimp.org/"
+license=('GPL-3.0-or-later')
+groups=('local-old-package')
+depends=('babl' 'cairo' 'fontconfig' 'freetype2' 'gcc-libs' 'gdk-pixbuf2'
+         'gegl' 'glib2' 'glibc' 'gtk2' 'harfbuzz' 'hicolor-icon-theme'
+         'iso-codes' 'json-glib' 'lcms2' 'libgexiv2' 'libmypaint' 'libunwind'
+         'mypaint-brushes1' 'pango' 'zlib' 'bzip2' 'libgudev' 'libheif'
+         'libjpeg-turbo' 'libjxl' 'libmng' 'libpng' 'librsvg' 'libtiff'
+         'libwebp' 'libwmf' 'libx11' 'libxcursor' 'libxext' 'libxfixes'
+         'libxmu' 'libxpm' 'openexr' 'openjpeg2' 'poppler-data'
+         'poppler-glib' 'xz' 'aalib')
+makedepends=()
+checkdepends=()
+optdepends=('alsa-lib: for MIDI event controller module'
+            'ghostscript: for PostScript support'
+            'gutenprint: for sophisticated printing only as gimp has built-in cups print support'
+            'gvfs: for HTTP/S support (and many other schemes)')
+provides=(gimp)
+conflicts=(gimp)
+replaces=()
+backup=()
+options=()
+install="gimp2.install"
+changelog=
+source=("https://archive.archlinux.org/packages/g/gimp/gimp-2.10.38-5-x86_64.pkg.tar.zst")
+noextract=()
+sha256sums=("395e88b7cd76ad2b6536574368fe582b85ad9d7f4c63076b26eb72dcc80aa9e0")
+validpgpkeys=()
+
+package() {
+	#cd "$pkgname-$pkgver"
+	mv "etc" "$pkgdir/"
+	mv "usr" "$pkgdir/"
+}
