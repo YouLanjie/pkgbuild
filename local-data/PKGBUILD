@@ -1,6 +1,6 @@
 # Maintainer: Your Name <youremail@domain.com>
 pkgname=local-data
-pkgver=0.0.7
+pkgver=0.0.8
 pkgrel=1
 epoch=
 pkgdesc="File for archiso"

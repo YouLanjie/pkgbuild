@@ -10,8 +10,9 @@
 ## arg 1:  the new package version
 post_install() {
 	# npm install -g neovim
-	systemctl enable user-http-server
-	systemctl enable vsftpd
+	# systemctl enable user-http-server
+	# systemctl enable vsftpd
+	locale-gen
 }
 
 ## arg 1:  the new package version

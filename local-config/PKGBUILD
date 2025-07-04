@@ -1,7 +1,7 @@
 # Maintainer: Chglish
 pkgname=local-config
-pkgver=0.1
-pkgrel=2
+pkgver=0.2
+pkgrel=1
 epoch=
 pkgdesc="自用配置"
 arch=('x86_64' 'i686')
@@ -19,7 +19,7 @@ backup=()
 options=()
 install=
 changelog=
-source=("config.tar.gz")
+source=("home.tar")
 noextract=()
 sha256sums=('SKIP')
 validpgpkeys=()

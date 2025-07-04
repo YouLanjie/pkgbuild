@@ -1,14 +1,14 @@
 # Maintainer: Your Name <youremail@domain.com>
 pkgname=local-run-script
 pkgver=0.0.2
-pkgrel=2
+pkgrel=3
 epoch=
 pkgdesc="方便安装后运行自定义脚本（现在内置nodejs-neovim）"
 arch=('any')
 url=""
 license=('GPL')
 groups=(local-built)
-depends=('nodejs' 'npm' 'neovim' 'local-http-server' 'vsftpd')
+depends=('nodejs' 'npm' 'neovim' 'local-http-server')
 makedepends=()
 checkdepends=()
 optdepends=()

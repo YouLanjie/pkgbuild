@@ -1,7 +1,7 @@
 # Maintainer: Chglish
 pkgname='arch-fast-install'
-pkgver=0.0.9
-pkgrel=2
+pkgver=0.0.10
+pkgrel=1
 epoch=
 pkgdesc="Arch快速安装脚本"
 arch=('x86_64')
@@ -19,7 +19,7 @@ backup=()
 options=()
 changelog=
 install=
-source=("arch-fast-install.tar.gz")
+source=("arch-fast-install.tar")
 noextract=()
 sha256sums=("SKIP")
 validpgpkeys=()
