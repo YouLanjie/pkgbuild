@@ -1,0 +1,89 @@
+# Maintainer: Your Name <youremail@domain.com>
+pkgname=python-manimce
+pkgver=0.19.0
+pkgrel=1
+epoch=
+pkgdesc="Animation engine for explanatory math videos (community edition)."
+arch=('any')
+url="https://github.com/ManimCommunity/manim"
+license=("MIT" "custom")
+groups=('local-built')
+# 更大缩进的是aur包
+depends=(
+    "ffmpeg"
+    "python"
+    "python-pillow"
+    "python-pygments"
+    "python-beautifulsoup4"
+    "python-click"
+    "python-decorator"
+    "python-networkx"
+    "python-numpy"
+    "python-cairo"
+    "python-rich"
+    "python-scipy"
+    "python-tqdm"
+    "python-typing_extensions"
+    "python-watchdog"
+    "python-srt"
+
+    "python-decorator"
+    "python-colour"
+    "python-google-api-core"
+    "python-importlib-metadata"
+    "python-requests"
+    "python-setuptools"
+
+    # archlinuxcn
+    "python-audioop-lts"
+    "python-av"
+    "python-click-default-group"
+    "python-pydub"
+    "python-skia-pathops"
+)
+makedepends=(
+    "base-devel"
+    "python-pip"
+    "python-build"
+    "python-installer"
+    "python-setuptools"
+    "python-wheel"
+)
+checkdepends=()
+optdepends=(
+    "texlive-core: LaTeX support"
+)
+provides=(
+	manim python-cloup python-isosurfaces python-manimpango
+	python-mapbox-earcut python-moderngl python-glcontext
+	python-moderngl-window python-screeninfo python-svgelements
+)
+conflicts=()
+replaces=()
+backup=()
+options=()
+install=
+changelog=
+source=()
+noextract=()
+sha256sums=()
+validpgpkeys=()
+
+build() {
+	pip download --no-deps -i https://pypi.tuna.tsinghua.edu.cn/simple ${provides[*]#python-}
+	if [[ ! -d output ]]; then
+		mkdir output
+	fi
+	find ./ -maxdepth 1 -type f -name "*.tar.gz" -exec tar xzf \{\} -C output \;
+	for dir in output/* ;do
+		python -m build -w -o . $dir
+	done
+	if [[ ! -d root ]]; then
+		mkdir root
+	fi
+	find ./ -maxdepth 1 -type f -name "*.whl" -exec python -m installer --destdir="root" \{\} \;
+}
+
+package() {
+	mv root/* $pkgdir
+}
