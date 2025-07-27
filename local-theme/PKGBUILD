@@ -1,7 +1,7 @@
 # Maintainer: LanjieYou <ylj18926385312@163.com>
 pkgname='local-theme'
 pkgver=0.0.3
-pkgrel=1
+pkgrel=2
 pkgdesc="本地主题（图标、字体）"
 arch=('any')
 url=""
@@ -11,7 +11,7 @@ depends=('kvantum-qt5' 'qt5ct' 'kvantum' 'qt6ct')
 makedepends=()
 checkdepends=()
 optdepends=()
-provides=()
+provides=("ttf-jetbrains-mono")
 conflicts=()
 replaces=()
 backup=()

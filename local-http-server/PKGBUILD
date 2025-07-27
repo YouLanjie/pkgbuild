@@ -1,13 +1,13 @@
 # Maintainer: Chglish <ylj18926385312@163.com>
 pkgname="local-http-server"
 pkgver=0.0.2
-pkgrel=2
+pkgrel=3
 pkgdesc="本地https服务器（基于nodejs）"
 arch=('x86_64')
 url=""
 license=('GPL')
 groups=('local-built')
-depends=('nodejs' 'npm' 'local-fork')
+depends=('nodejs' 'npm')
 makedepends=('gcc')
 checkdepends=()
 optdepends=()
@@ -20,7 +20,7 @@ install=
 changelog=
 source=("user-http-server.service")
 noextract=()
-sha256sums=('5ff87249e9d911b8ccd9f08a20ce01d1552bf04f794e24f14a1fceeb8b7f5c25')
+sha256sums=('033eec6e30d7482230de6dcdcf4942311ef4902fc66b1e7291aea822a412c561')
 validpgpkeys=()
 
 package() {

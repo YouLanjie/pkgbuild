@@ -3,8 +3,8 @@ Description=HTTP server(本地网页HTTP服务)(Depend on nodejs)
 After=network.target network-online.target
 
 [Service]
-Type=forking
-ExecStart=fork "http-server / --log-ip -p 8080"
+Type=simple
+ExecStart=/usr/bin/http-server / --log-ip -p 8080
 
 [Install]
 WantedBy=multi-user.target
