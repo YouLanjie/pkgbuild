@@ -1,7 +1,7 @@
 # Maintainer: Your Name <youremail@domain.com>
 pkgname=python-manimce
 pkgver=0.19.0
-pkgrel=2
+pkgrel=3
 epoch=
 pkgdesc="Animation engine for explanatory math videos (community edition)."
 arch=('any')
@@ -39,7 +39,8 @@ depends=(
     "python-av"
     "python-click-default-group"
     "python-pydub"
-    "python-skia-pathops"
+    # 本来有但是被archlinuxcn仓库自动删除：
+    # "python-skia-pathops"
 )
 makedepends=(
     "base-devel"
@@ -53,10 +54,12 @@ checkdepends=()
 optdepends=(
     "texlive-core: LaTeX support"
 )
+# 这里决定内置什么python包
 provides=(
 	manim python-cloup python-isosurfaces python-manimpango
 	python-mapbox-earcut python-moderngl python-glcontext
 	python-moderngl-window python-screeninfo python-svgelements
+	python-skia-pathops
 )
 conflicts=()
 replaces=()
