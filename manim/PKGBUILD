@@ -1,7 +1,7 @@
 # Maintainer: Your Name <youremail@domain.com>
 pkgname=python-manimce
 pkgver=0.19.0
-pkgrel=3
+pkgrel=4
 epoch=
 pkgdesc="Animation engine for explanatory math videos (community edition)."
 arch=('any')
@@ -12,33 +12,31 @@ groups=('local-built')
 depends=(
     "ffmpeg"
     "python"
-    "python-pillow"
-    "python-pygments"
     "python-beautifulsoup4"
+    "python-cairo"
     "python-click"
+    "python-colour"
     "python-decorator"
+    "python-google-api-core"
+    "python-importlib-metadata"
     "python-networkx"
     "python-numpy"
-    "python-cairo"
+    "python-pillow"
+    "python-pydub"
+    "python-pygments"
+    "python-requests"
     "python-rich"
     "python-scipy"
+    "python-setuptools"
+    "python-srt"
     "python-tqdm"
     "python-typing_extensions"
     "python-watchdog"
-    "python-srt"
-
-    "python-decorator"
-    "python-colour"
-    "python-google-api-core"
-    "python-importlib-metadata"
-    "python-requests"
-    "python-setuptools"
 
     # archlinuxcn
-    "python-audioop-lts"
     "python-av"
     "python-click-default-group"
-    "python-pydub"
+    # "python-audioop-lts"    # pydub的依赖
     # 本来有但是被archlinuxcn仓库自动删除：
     # "python-skia-pathops"
 )
@@ -61,7 +59,7 @@ provides=(
 	python-moderngl-window python-screeninfo python-svgelements
 	python-skia-pathops
 )
-conflicts=()
+conflicts=("${provides[@]}")
 replaces=()
 backup=()
 options=()

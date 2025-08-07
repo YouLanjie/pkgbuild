@@ -1,0 +1,49 @@
+pkgname=python-orgreader2
+pkgver=0.0.1
+pkgrel=1
+epoch=
+pkgdesc="test python package"
+arch=('any')
+url="https://github.com/youlanjie/my-test/"
+license=("MIT")
+groups=()
+# 更大缩进的是aur包
+depends=(
+    "python"
+    "python-requests"
+    "python-pygments"
+)
+makedepends=(
+    "base-devel"
+    "python-pip"
+    "python-build"
+    "python-installer"
+    "python-setuptools"
+    "python-wheel"
+)
+checkdepends=()
+optdepends=(
+	"python-argcomplete: 参数补全"
+)
+# 这里决定内置什么python包
+provides=()
+# conflicts=("${provides[@]}")
+replaces=()
+backup=()
+options=()
+install=
+changelog=
+source=("${pkgname#python-}-${pkgver}.tar.gz")
+noextract=()
+sha256sums=('SKIP')
+validpgpkeys=()
+
+build() {
+	cd "${pkgname#python-}-${pkgver}"
+	python -m build --wheel --no-isolation
+}
+
+package() {
+	cd "${pkgname#python-}-${pkgver}"
+	python -m installer --destdir="$pkgdir" dist/*.whl
+}
