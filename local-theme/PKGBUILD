@@ -1,7 +1,7 @@
 # Maintainer: LanjieYou <ylj18926385312@163.com>
 pkgname='local-theme'
 pkgver=0.0.3
-pkgrel=2
+pkgrel=3
 pkgdesc="本地主题（图标、字体）"
 arch=('any')
 url=""
@@ -10,7 +10,7 @@ groups=(local-built)
 depends=('kvantum-qt5' 'qt5ct' 'kvantum' 'qt6ct')
 makedepends=()
 checkdepends=()
-optdepends=()
+optdepends=("noto-fonts-cjk: 更丰富的中文字体支持")
 provides=("ttf-jetbrains-mono")
 conflicts=()
 replaces=()
@@ -20,7 +20,7 @@ install=
 changelog=
 source=("$pkgname.tar.gz")
 noextract=()
-sha256sums=("21e95cbc1f2b27217a6bdd3c4d002732d591aafdcd4b32aa9e814637a304ad98")
+sha256sums=("7f1a8209e28b503b64d09083d1b52455407e1b25608390938f169bd86109628b")
 validpgpkeys=()
 
 package() {
